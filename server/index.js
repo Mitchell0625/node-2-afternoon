@@ -10,6 +10,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+app.use(express.static("././client"));
+
 massive(process.env.CONNECTION_STRING).then(dbInstance => {
   // console.log(dbInstance);
   app.set("db", dbInstance);
